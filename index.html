@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="content">
+            <img src="icon.png" alt="">
+            <h1>Love Calculator</h1>
+            <div class="inputarea">
+                <input type="text" placeholder="Ismingiz" id="NameOne" onfocus="this.value = ''">
+                <input type="text" placeholder="Sizning sevgilingiz" id="NameTwo" onfocus="this.value = ''">
+            </div>
+            <a href="#" onclick="love()"> Hisoblash</a>
+            <p id="print">Sizning munosabatingiz bu erda natija beradi</p>
+            <p id="statement"></p>
+        </div>
+    </div>
+
+
+    <script>
+        function love() {
+            var name1 = document.getElementById("NameOne").value;
+            var name2 = document.getElementById("NameTwo").value;
+            if (name1.length <= 2) {
+                alert("Kamida 3 ta belgi kiriting");
+            }
+            if (name2.length <= 2) {
+                alert("Kamida 3 ta belgi kiriting");
+            } else {
+                var random = Math.floor(Math.random() * 100);
+                document.getElementById("print").innerHTML = name1 + "&nbsp -va-  " + name2 + "&nbsp=&nbsp" + random + " %" + " &nbsp sevgi";
+            }
+            if (random <= 10 || random <= 50) {
+                document.getElementById("statement").innerHTML = "Yaxshi munosabat";
+            } else if (random <= 51 || random <= 100) {
+                document.getElementById("statement").innerHTML = "Sevimli munosabatlar";
+            }
+        }
+        alert("Salom bu saytda taxminiy munosabatingizni aniqlashingiz mumkin . ''OK'' buyrugini berib davom eting!");
+    </script>
+
+
+</body>
+
+</html>
